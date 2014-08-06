@@ -1,12 +1,9 @@
-//#include <EEPROM.h> // eeprom not used currently
-// TODO: have configurable settings commanded by master over SPI, stored in eeprom
+//#include <EEPROM.h> // eeprom not used currently, plan to have configurable settings in the future
 
-
-
-volatile uint8_t phase = 0; // motor firing phase
-volatile long position = 0; // current position
-volatile bool sample_and_hold_pin = false; // flag to tell loop to sample current position
-volatile byte position_buffer[] = {0, 0, 0, 0}; // buffer for transfering single bytes of position over spi
+volatile uint8_t phase = 0;
+volatile long position = 0;
+volatile bool sample_and_hold_pin = false;
+volatile byte position_buffer[] = {0, 0, 0, 0};
 
 
 
@@ -56,7 +53,6 @@ void setup() {
     initInterrupt();
 
     // setup phase to correct motor position by triggering pin change interrupt a few times
-    // fills in hall variable in pin change ISR 
     delay(1);
     digitalWrite(4, LOW);
     delay(1);
