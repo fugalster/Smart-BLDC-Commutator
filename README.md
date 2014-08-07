@@ -1,4 +1,4 @@
-Smart-BLDC-Commutator
+Smart BLDC Commutator
 =====================
 Author: Nich Fugal
 
