@@ -63,6 +63,12 @@ void setup() {
     digitalWrite(4, HIGH);
     delay(1);
     digitalWrite(4, LOW);
+	
+	// flash LED thrice on reset
+	for (int i=0; i<6; i++) {
+	    PINB |= _BV(0);
+		delay(80);
+	}
 }
 
 
